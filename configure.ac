@@ -121,7 +121,7 @@ fi
 
 
 
-MESOS_CPPFLAGS="$MESOS_INCLUDE_PATH"
+MESOS_CPPFLAGS="$MESOS_INCLUDE_PATH" 
 
 AC_SUBST(MESOS_CPPFLAGS)
 AC_SUBST(MESOS_INCLUDE_PATH)
@@ -185,8 +185,8 @@ if test "x$CLANG" = "xno"; then
     # -Wno-unused-local-typedefs, and automake does not recognize the
     # flag.
     # TODO(brenden): Remove this when Boost has a resolution.
-    CFLAGS="${CFLAGS} -Wno-unused-local-typedefs"
-    CXXFLAGS="${CXXFLAGS} -Wno-unused-local-typedefs"
+    CFLAGS="${CFLAGS} -Wno-unused-local-typedefs -Wno-deprecated-declarations"
+    CXXFLAGS="${CXXFLAGS} -Wno-unused-local-typedefs -Wno-deprecated-declarations"
   fi
 
   # Check for GCC version == 4.7 and fail. Starting with 4.7 the '#if
